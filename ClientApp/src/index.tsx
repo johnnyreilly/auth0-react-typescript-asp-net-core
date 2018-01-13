@@ -3,7 +3,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Router } from 'react-router-dom';
-import { Api } from './api';
 import { App } from './app';
 import { Config } from './config';
 import { Dependencies } from './dependencies';
@@ -24,9 +23,8 @@ function getDependencies() {
         API_BASE_URI: process.env.API_BASE_URI,
         NODE_ENV: process.env.NODE_ENV,
     });
-    const api = new Api(config);
     const storage = new StorageFacade(window.localStorage);
-    const dependencies = new Dependencies(api, config, storage);
+    const dependencies = new Dependencies(config, storage);
 
     dependencies.authStore.initialise();
 

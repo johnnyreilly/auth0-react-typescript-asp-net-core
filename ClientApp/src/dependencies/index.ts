@@ -1,5 +1,4 @@
 import * as mobx from 'mobx';
-import { Api } from '../api';
 import { Config } from '../config';
 import { StorageFacade } from './storageFacade';
 import { AuthStore } from './stores/authStore';
@@ -10,7 +9,6 @@ export class Dependencies {
     authStore: AuthStore;
 
     constructor(
-        public api: Api,
         public config: Config,
         public storage: StorageFacade
     ) {

@@ -60,7 +60,7 @@ export class Header extends React.Component<IHeaderProps> {
           <Menu.Item className="brand">
             <Link to="/">
               <Icon className="id badge start big" />
-              SEEDY AUTH0
+              AUTH0
             </Link>
           </Menu.Item>
 
