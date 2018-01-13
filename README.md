@@ -11,11 +11,15 @@ To install the Server (`Web`) dependencies use `dotnet restore`
 
 ## Auth0 Setup
 
-- Login into Auth0 and go to the management portal.
+Here's how to get the app set up with Auth0; you're going to need to sign up for a (free) Auth0 account. Then login into Auth0 and go to the management portal.
+
+### Client
 
 - Create a Client with the name of your choice and use the Single Page Web Applications template.
 - From the new Client Settings page take the Domain and Client ID and update the similarly named properties in the `appsettings.Development.json` and `appsettings.Production.json` files with these settings.
-- To the Allowed Callback URLs setting add the URLs: http://localhost:3000/callback,http://localhost:5000/callback
+- To the Allowed Callback URLs setting add the URLs: http://localhost:3000/callback,http://localhost:5000/callback - the first of these faciliates running in Debug mode, the second in Production mode.  If you were to deploy this you'd need to add other callback URLs in here too.
+
+### API
 
 - Create an API with the name of your choice (I recommend the same as the Client to avoid confusion), an identifier which can be anything you like; I like to use the URL of my app but it's your call.
 - From the new API Settings page take the Identifier and update the `Audience` property in the `appsettings.Development.json` and `appsettings.Production.json` files with that value.
