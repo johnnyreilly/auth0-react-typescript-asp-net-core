@@ -1,7 +1,7 @@
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
+import { Container, Image } from 'semantic-ui-react';
 import { Dependencies } from '../../../dependencies/index';
 import { AuthStore } from '../../../dependencies/stores/authStore';
 
@@ -28,7 +28,7 @@ export class ProfilePage extends React.Component<IProps> {
             <Container>
                 <div className="profile-area">
                     <h1>{profile.name}</h1>
-                    <img src={profile.picture} alt="profile" />
+                    <Image src={profile.picture} size="small" />
                     <div>
                         Nickname <h3>{profile.nickname}</h3>
                     </div>
